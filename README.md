@@ -4,6 +4,14 @@ helper quadlet container to enable rapid deployment of a quadlet-based fedora se
 
 when configured properly, github can ping your server (via webhook) to instantly pull and sync your quadlet setup on push!
 
+## demo
+
+
+
+https://github.com/user-attachments/assets/96b6b7c0-6c52-4a63-971a-8996bb8d9374
+
+
+
 ## setup
 
 ### local
