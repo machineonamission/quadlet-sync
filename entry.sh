@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./sync.sh
-hooks /app/hooks.json -verbose -port 9191
+/app/sync.sh
+/usr/local/bin/webhook -hooks /app/hooks.json -verbose -port 9191
