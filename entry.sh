@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ./sync.sh
-hooks /hooks.json -verbose -port 9191
+hooks /app/hooks.json -verbose -port 9191
