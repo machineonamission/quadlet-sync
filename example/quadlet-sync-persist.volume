@@ -1,3 +1,6 @@
+# you only need to install this if you're using the persist dir.
+
 [Volume]
+# MAKE SURE THIS DIR EXISTS ON THE HOST!!
 Device=/srv/volumes/quadlet
 Type=bind

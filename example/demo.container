@@ -6,8 +6,6 @@ Environment=REPO=http://github.com/machineonamission/quadlet.git
 # (optional) change port internally, useful for net=host configs where PublishPort isn't used.
 #Environment=PORT=9191
 
-
-
 ContainerName=quadlet-sync
 Image=ghcr.io/machineonamission/quadlet-sync:main
 
