@@ -2,11 +2,16 @@
 # git repo to clone and sync
 Environment=REPO=http://github.com/machineonamission/quadlet.git
 # (optional) subdirectory of repo to use. useful to organize repo or have multiple configs in one repo
-Environment=REPO_SUBDIR=quadlet
+#Environment=REPO_SUBDIR=quadlet
+# (optional) change port internally, useful for net=host configs where PublishPort isn't used.
+#Environment=PORT=9191
+
+
 
 ContainerName=quadlet-sync
 Image=ghcr.io/machineonamission/quadlet-sync:main
-# to give it access to system systemctl
+
+# to give it access to host systemctl
 PodmanArgs=--privileged
 PodmanArgs=--pid=host
 
@@ -16,8 +21,9 @@ Pull=newer
 
 # Map the host systemd folder to /host-systemd inside the container
 Volume=/etc/containers/systemd:/host-systemd:rw
-# (optional) "persist" dir that is also copied to the systemd folder. useful for secrets in .env files that cant be put on a git repo.
-Volume=quadlet-sync-persist.volume:/persist:z
+# (optional) "persist" dir that is also copied to the systemd folder.
+# useful for secrets in .env files that cant be put on a git repo.
+#Volume=quadlet-sync-persist.volume:/persist:z
 
 # Run the webhook server on port 9191
 PublishPort=9191:9191

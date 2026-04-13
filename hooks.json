@@ -1,6 +1,6 @@
 [
   {
     "id": "sync-quadlets",
-    "execute-command": "/sync.sh"
+    "execute-command": "/app/sync.sh"
   }
 ]
