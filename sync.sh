@@ -24,9 +24,13 @@ rm -rf /tmp/flattened-quadlets/*
 # 3. Find all Quadlet files in nested folders and copy them FLAT into staging.
 find /repo/"${REPO_SUBDIR}" -type f -exec cp {} /tmp/flattened-quadlets/ \;
 
+if [ -d "/persist" ]; then
+  find /persist -type f -exec cp {} /tmp/flattened-quadlets/ \;
+fi
+
 # 4. Sync the flattened staging folder to the real systemd directory.
 # Because we use --delete, any file you removed from Git will now be safely deleted from systemd!
 rsync -av --delete /tmp/flattened-quadlets/ /host-systemd
 
 # 5. Reload systemd on the host so it sees the changes
-nsenter -t 1 -m -u -i -n -p systemctl daemon-reload
+nsenter -t 1 -m -u -i -n -p /usr/bin/systemctl daemon-reload
