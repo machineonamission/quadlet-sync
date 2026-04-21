@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Beginning sync..."
 
 if [ -z "$REPO" ]; then
